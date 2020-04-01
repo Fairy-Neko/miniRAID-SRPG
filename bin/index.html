@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Game</title>
+
+    <script src = "js/require.js"></script>
+    <!-- <script src = "js/umd.min.js"></script> -->
+    <script src = "js/phaser.js"></script>
+    <script src = "js/gameMain.js"></script>
+
+    <script>
+        require.config({
+            paths: {
+                "SimpleGame": "js/gameMain",
+                "typescript-collections": "js/umd",
+                "Phaser": 'js/phaser',
+            },
+
+            deps: [ "Phaser", "typescript-collections" ]
+        });
+
+        window.onload = () => {
+            require(["SimpleGame"]);
+        }
+    </script>
+</head>
+<body>
+    <div id="GameFrame" oncontextmenu="return false;">
+    </div>
+</body>
+</html>
